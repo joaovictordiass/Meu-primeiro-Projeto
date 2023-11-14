@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Projeto</title>
+
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+        }
+        div#area {
+            background-color: aqua;
+            color: black;
+            text-align: center;
+            font: 30pt Arial;
+            width: center;
+            line-height: 50px;
+        }
+        div#res{
+            font: 15pt Arial;
+            margin-top: 10px;
+        }
+        div#res1 {
+            background-color: aquamarine;
+            text-align: center;
+            font: 20pt Arial;
+            width: center;
+            margin-top: 20px;
+        }
+        p {
+            font: 20pt Arial;
+        }
+        div#area2 {
+            font: 20pt Arial;
+        }
+        div#res2 {
+            font: 15pt Arial;
+            margin-top: 10px;
+        }
+        div#res3 {
+            font: 15pt Arial;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Bem vindo ao meu primeiro projeto!
+    </div>
+    <div id="res1" >
+        Este meu primeiro projeto, tem como objetivo exercer
+        todo meu aprendizado até este momento, vamos utilizar
+        contas, botão interativos e algumas perguntas básicas.
+    </div>
+
+    <div id="area2">
+        <p>Exercício 1: </p>
+        <strong>Somando Valores</strong>
+    </div>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="SOMAR" onclick="somar()">
+    <div id='res'> <strong>Resultado!</strong> </div>
+
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual á <strong>${s}<strong/>.`
+        }
+    </script>
+
+<div id="area2">
+    <p>Exercício 2:</p>
+    <Strong>Nacionalidade</Strong>
+</div>
+<input type="text" name="txtnac" id="txtnac">
+<input type="button" value="VERIFICAR" onclick="calcular()">
+<div id="res2"><strong>Resultado!</strong></div>
+
+<script>
+    function calcular() {
+        var txt1 = document.getElementById('txtnac')
+        var res = document.getElementById('res2')
+        var pais = String(txt1.value)
+
+        if (pais == 'Brasil') {
+            res.innerHTML = `Você nasceu no Brasil e sua nacionalidade é <strong>Brasileiro</strong>!`
+        }
+        else {
+            res.innerHTML = `Você é estrangeiro, nasceu na <strong>${pais}</strong>!`
+        }
+    }
+</script>
+
+<div id="area2" >
+    <p>Exercício 3:</p>
+    <strong>Idade</strong>
+</div>
+<input type="number" name="txid" id="txid">
+<input type="button" value="VERIFICAR" onclick="validar()">
+<div id="res3"><strong>Resposta!</strong></div>
+
+<script>
+    function validar () {
+        var txt = document.getElementById('txid')
+        var res = document.getElementById('res3')
+        var idade = Number(txt.value)
+
+        if (idade >= 18) {
+            res.innerHTML = `Você tem <strong>${idade}</strong> anos, você já é de maior!`
+        }
+        else {
+            res.innerHTML = `Você tem <strong>${idade}</strong> anos, você ainda é de menor!`
+        }
+    }
+</script>
+
+</body>
+</html>
